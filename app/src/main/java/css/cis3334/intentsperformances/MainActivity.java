@@ -1,6 +1,7 @@
 package css.cis3334.intentsperformances;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import java.util.GregorianCalendar;
 public class MainActivity extends AppCompatActivity {
 
     Button btn1Web, but1Calendar, btn1Map;
+    Button btn2Web, but2Calendar, btn2Map;
     TextView textViewStatus;
 
     @Override
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textViewStatus = (TextView) findViewById(R.id.textViewStatus);
+
         setupButtonClickEvents();
 
 
@@ -33,9 +36,12 @@ public class MainActivity extends AppCompatActivity {
          *   Set up button click event listener for the web info button for the first performance
          */
         btn1Web = (Button) findViewById(R.id.button1WebInfo);
+        btn2Web = (Button) findViewById(R.id.button1WebInfo);
+
         btn1Web.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                
                 textViewStatus.setText("Code should display website for performance 1");
             }
         });
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
          *       Use the calendar intent to set an event reminder on the calendar
          */
         but1Calendar = (Button) findViewById(R.id.button1Calendar);
+        but2Calendar = (Button) findViewById(R.id.button2Calendar);
         but1Calendar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
          *   Set up button click event listener for the web info button for the first performance
          */
         btn1Map = (Button) findViewById(R.id.button1map);
+        btn2Map = (Button) findViewById(R.id.button2map);
         btn1Map.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
